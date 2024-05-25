@@ -1,11 +1,24 @@
 const express = require("express");
-const app = express();
+const cors = require("cors");
+
 const ordersRouter = require("./routes/getOrders");
+const initDatabase = require("./initDatabase");
+
+const app = express();
+app.use(cors());
 
 const port = 3001;
 
-app.use("/api/orders", ordersRouter);
+// init database
+initDatabase()
+    .then(() => {
+        app.listen(port, () => {
+            console.log("Server is running on port 3000");
+        });
+    })
+    .catch((err) => {
+        console.error("Failed to initialize the database:", err);
+        process.exit(1);
+    });
 
-app.listen(port, () => {
-    console.log(`Server listening on port ${port}`);
-});
+app.use("/api/orders", ordersRouter);

@@ -1,8 +1,5 @@
-export const triggerFeedDownload = async () => {
-    const response = await fetch("/api/feed", {
-        method: "POST",
-    });
-    if (!response.ok) {
-        throw new Error("Failed to trigger feed download");
-    }
+export const triggerFeedDownload = async (source: string) => {
+    const response = await fetch(`http://localhost:3001/api/orders/fetchOrders?source=${source}`, {cache: "no-store"});
+    const data = await response.json();
+    return data;
 };

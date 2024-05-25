@@ -1,6 +1,8 @@
+import Link from "next/link";
+
 const NavBar = () => {
     return (
-        <div className=" bg-base-100 fixed w-full">
+        <div className=" bg-base-300 fixed w-full">
             <div className="navbar max-w-7xl m-auto">
                 <div className="navbar-start">
                     <div className="dropdown">
@@ -29,18 +31,15 @@ const NavBar = () => {
                             </li>
                         </ul>
                     </div>
-                    <a className="btn btn-ghost text-xl">Objednávky Leontýna</a>
                 </div>
                 <div className="navbar-center hidden lg:flex">
                     <label className="flex cursor-pointer gap-2">
-                        <span className="label-text">Leontýna.cz</span>
+                        <span className="label-text">Leontyna.cz</span>
                         <input type="checkbox" value="cz" className="toggle" />
-                        <span className="label-text">Leontýna.sk</span>
+                        <span className="label-text">Leontyna.sk</span>
                     </label>
                 </div>
-                <div className="navbar-end">
-                    <a className="btn btn-primary">Vynutit stažení feedu</a>
-                </div>
+                <div className="navbar-end"></div>
             </div>
         </div>
     );
