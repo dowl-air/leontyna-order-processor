@@ -4,7 +4,6 @@ const url = "https://api.kontri.pl:8866/KontriAPIservice.svc?wsdl";
 const username = process.env.KONTRI_API_USER;
 const password = process.env.KONTRI_API_PASSWORD;
 
-// Create a SOAP client
 function createClient() {
     return new Promise((resolve, reject) => {
         const options = {
