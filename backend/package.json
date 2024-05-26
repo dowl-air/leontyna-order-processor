@@ -17,7 +17,8 @@
         "csvtojson": "^2.0.10",
         "express": "^4.19.2",
         "mysql2": "^3.9.7",
-        "request": "^2.88.2"
+        "request": "^2.88.2",
+        "strong-soap": "^4.0.6"
     },
     "devDependencies": {
         "nodemon": "^3.1.0"
