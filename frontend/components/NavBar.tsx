@@ -1,4 +1,4 @@
-import Link from "next/link";
+import CheckServiceStatusButton from "./CheckServiceStatusButton";
 
 const NavBar = () => {
     return (
@@ -32,12 +32,13 @@ const NavBar = () => {
                         </ul>
                     </div>
                 </div>
-                <div className="navbar-center hidden lg:flex">
+                <div className="navbar-center hidden lg:flex gap-5">
                     <label className="flex cursor-pointer gap-2">
-                        <span className="label-text">Leontyna.cz</span>
+                        <span>Leontyna.cz</span>
                         <input type="checkbox" value="cz" className="toggle" />
-                        <span className="label-text">Leontyna.sk</span>
+                        <span>Leontyna.sk</span>
                     </label>
+                    <CheckServiceStatusButton />
                 </div>
                 <div className="navbar-end"></div>
             </div>
