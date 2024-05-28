@@ -3,6 +3,8 @@ const cors = require("cors");
 
 const ordersRouter = require("./routes/getOrders");
 const checkServiceRouter = require("./routes/checkService");
+const checkOrderRouter = require("./routes/checkOrder");
+const sendOrdersRouter = require("./routes/sendOrders");
 const initDatabase = require("./initDatabase");
 
 const app = express();
@@ -24,3 +26,5 @@ initDatabase()
 
 app.use("/api/orders", ordersRouter);
 app.use("/api/checkService", checkServiceRouter);
+app.use("/api/checkOrder", checkOrderRouter);
+app.use("/api/sendOrders", sendOrdersRouter);

@@ -1,10 +1,12 @@
 "use client";
 
-import { checkServiceStatus } from "@/actions/checkServiceStatus";
 import { useState } from "react";
+
+import { checkServiceStatus } from "@/actions/checkServiceStatus";
 
 const CheckServiceStatusButton = () => {
     const [status, setStatus] = useState<string>("");
+
     const onClick = async () => {
         const response = await checkServiceStatus();
         if (response.CheckStatusResult) {
@@ -16,6 +18,7 @@ const CheckServiceStatusButton = () => {
             setStatus("");
         }, 5000);
     };
+
     return (
         <>
             <button className="btn btn-primary btn-outline btn-xs" onClick={onClick}>

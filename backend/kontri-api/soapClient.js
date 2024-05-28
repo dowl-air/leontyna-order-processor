@@ -33,7 +33,33 @@ async function checkService() {
     });
 }
 
+async function getOrderStatus(altumOrderID) {
+    const client = await createClient();
+    return new Promise((resolve, reject) => {
+        client.GetOrderStatus({ AltumOrderID: altumOrderID }, (err, result) => {
+            if (err) {
+                return reject(err);
+            }
+            resolve(result);
+        });
+    });
+}
+
+async function sendOrder(orderObject) {
+    const client = await createClient();
+    return new Promise((resolve, reject) => {
+        client.AddOrder({ Order: orderObject }, (err, result) => {
+            if (err) {
+                return reject(err);
+            }
+            resolve(result);
+        });
+    });
+}
+
 module.exports = {
     createClient,
     checkService,
+    getOrderStatus,
+    sendOrder,
 };
