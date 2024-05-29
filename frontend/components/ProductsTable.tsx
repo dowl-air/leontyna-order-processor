@@ -97,7 +97,7 @@ const ProductsTable = ({ initialShopOrders }: { initialShopOrders: ShopOrder[] }
                             {shopOrders.map((order) => (
                                 <tr key={order.id}>
                                     <th>{order.code}</th>
-                                    <td className="text-nowrap">{new Date(order.date).toLocaleString("cs")}</td>
+                                    <td className="text-nowrap">{new Date(order.date).toISOString()}</td>
                                     <td>{order.orderItemCode}</td>
                                     <td>{order.orderItemName}</td>
                                     <td>{order.orderItemVariantName}</td>
