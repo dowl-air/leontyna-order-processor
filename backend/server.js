@@ -13,7 +13,7 @@ app.use(cors());
 const port = 3001;
 
 // init database
-initDatabase()
+/* initDatabase()
     .then(() => {
         app.listen(port, () => {
             console.log("Server is running on port " + port);
@@ -22,7 +22,11 @@ initDatabase()
     .catch((err) => {
         console.error("Failed to initialize the database:", err);
         process.exit(1);
-    });
+    }); */
+
+app.listen(port, () => {
+    console.log("Server is running on port " + port);
+});
 
 app.use("/api/orders", ordersRouter);
 app.use("/api/checkService", checkServiceRouter);

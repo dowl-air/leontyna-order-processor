@@ -11,6 +11,7 @@ function createClient() {
                 Authorization: "Basic " + Buffer.from(username + ":" + password).toString("base64"),
             },
         };
+        console.log(options);
         soap.createClient(url, options, (err, client) => {
             if (err) {
                 return reject(err);
